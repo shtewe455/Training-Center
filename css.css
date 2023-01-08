@@ -1,0 +1,229 @@
+ :root {
+    /* هذا متغير يحمل اللون الرئيسي للموقع بنستعمله في اكثر من مكان  */
+    --main-color  : #2d3879; 
+ }
+
+*{
+    margin: 0px;
+    padding: 0px;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* بداية تنسيقات الناف بار  */
+
+
+nav {
+    /* اجعل نوع استعراض الناف بار فلكس   */
+    display: flex; 
+ 
+    justify-content: space-around;        /* سبيس اراوند تقسم المسافة بين العناصر  */
+    
+    align-items: center;     /* هذا الأمر يجعل العناصر تتوسط عموديا في الشاشة  */
+    background-color: var( --main-color) ;
+    padding: 30px; 
+    flex-wrap: wrap;      
+}
+nav img{
+    width: 60px;
+   
+}
+nav h2 {
+    color:white;
+    font-size: 40px;
+    text-shadow: 1px 2px 4px #eee ;
+}
+
+
+ul {
+
+    /* padding: 50px; */
+    display: flex; /* اجعل استعراض اليو ال فلكس  */
+    justify-content: center; /* جعل العناصر تتوسط افقيا  */
+    align-items: center; /*  جعل العناصر تتوسط عموديا */
+    gap: 40px; /*  اجعل فجوة بين العناصر */
+
+}
+
+ul li { 
+    padding: 10px;
+    list-style: none; /* ازل التنسيق الافتراضي لليست آيتم  */
+    transition:  0.3s; /* ترانزيشن تقوم بعمل تبطيء لأي حدث ياتي على العنصر على سبيل المثال عند الهوفر يتم وضع اللون ببطأ  */
+    border-radius: 10px;
+}   
+
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px; 
+}
+
+@media (max-width : 760px) {
+    ul li a {
+        font-size: 18px;
+    }      
+}
+ul li:hover ,
+ul li:hover a{
+    background-color: rgb(43, 85, 122);
+    color: whitesmoke;
+}
+
+
+/* نهاية  تنسيقات الناف بار  */
+
+
+/* بداية صفحة تسجيل الدخول  */
+.page_title {  /*   عنوان صفحة تسجيل الدخول   */
+ text-align: center;
+ font-size: 25px;
+ padding: 20px;
+}
+
+
+form {
+    display: flex; /*  اجعل استعراض الفورم فلكس  */
+    justify-content: center;  /*  وسط العناصر طوليا وعرضيا   */
+    align-items: center;
+    flex-direction: column;  /*   اجعل اتجاه الفلكس عمودي */
+    gap: 10px;  /*  ضع فجوة بين العناصر   */
+    width: fit-content;  /*  اجعل عرض الفورم لا يزيد على عرض العناصر   */
+    margin : 30px   auto ;  /*   ضع هامش من فوق 30 بكسل ومن اليمين واليسار اوتو تعني الهامش من اليمين واليسار متساوي  */
+}
+
+form  label {   
+    font-size: 20px; 
+}
+
+form  input  { 
+    font-size: 20px;   /*  */
+    padding: 10px;
+}
+
+form  input[type = submit]  {    /*  اختر الحقل الذي نوعه سبمت الذي هو زر الارسال   */
+    padding: 10px;  
+    width: 100%;   /* عرض الزر سيكون 100% من الفورم    */
+    border-radius: 10px;
+    background-color: aliceblue;
+}   
+
+form  input[type = submit]:hover {
+    cursor: pointer;
+    background-color: var( --main-color) ;
+}
+/* نهاية  صفحة تسجيل الدخول  */
+
+
+/* بداية الصفحة الرئيسية    */
+.section {
+    background-image: url("3.jpg") ;   /*   خلفية الصفحة التالتة  */
+    background-size: cover;  
+    height: 89vh; 
+    display: flex; /* اجعل نوع استعراض السكشن  فلكس ووسط العناصر طوليار وعرضيا   */
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 20px;  /*  ضع فجوة بينهم  */
+    position: relative; /*  اجعل البوزيشن النوع النسبي للأب عندما يتحرك الإبن في الوضع المطلق يتحرك نسبة الى الأب  */
+}
+
+.section  h2 {
+text-align: center;
+font-size:45px;
+color: white;
+position: relative;
+z-index: 1;
+
+}
+
+.section  p {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    z-index: 1; /*  هذا الخيار سيجعل العنصر يصعد درجة في احداثي الزد بحيث انه يصبح فوق الطبقة السوداء التي وضعناها فوق الصورة   */
+}
+
+.section button {
+width: 200px;
+margin : 0px auto ;
+padding: 10px;
+font-size: 20px;
+z-index: 1; /*  نفس الشيء في بقية العناصر نريدها ان تصعد لأعلى حتى تصبح فوق الطبقة السوداء  */
+transition: .3s;
+border-radius: 10px;
+}
+
+.section button:hover {
+    cursor: pointer;
+    background-color:  var(--main-color) ;
+    color: white;
+}
+
+
+.section  span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: #0000007d;
+}
+
+/* نهاية  الصفحة الرئيسية    */
+
+
+/* بداية صفحة جميع الدورات   */
+.image_container {
+    display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+    gap: 50px;
+    width: 70%;
+    margin: 60px auto ;
+}
+
+.image_container .box {
+    width: fit-content ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+    position: relative;
+    
+}
+.image_container .box:hover{
+    cursor: pointer;
+    
+}
+
+.image_container .box:hover h2 {
+    color: blue ;
+    
+}
+.image_container .box  span{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+.image_container .box  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+
+.image_container .box  h2 {
+    text-align: center;
+    width: 300px;
+}
+  
+.image_container .box  p {
+    width: 300px;
+    text-align: center;
+}
+/* نهاية  صفحة جميع الدورات   */
+
